@@ -1,4 +1,5 @@
 import socket
+from sys import exit
 
 # On définit la destination de la connexion
 host = '10.1.4.2'  # IP du serveur
@@ -21,3 +22,4 @@ s.close()
 
 # Affichage de la réponse reçue du serveur
 print(f"Le serveur a répondu {repr(data)}")
+exit(0)
