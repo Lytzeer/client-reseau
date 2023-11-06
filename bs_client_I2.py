@@ -17,9 +17,11 @@ except:
     print("Erreurs lors de la connexion au serveur")
     exit(1)
 
+# On reçoit 1024 bytes qui contiennent peut-être une réponse du serveur
+data = s.recv(1024)
+
 s.sendall(anwser.encode())
 
-# On reçoit 1024 bytes qui contiennent peut-être une réponse du serveur
 data = s.recv(1024)
 
 # On libère le socket TCP
