@@ -9,7 +9,7 @@ anwser=input("Que veux-tu envoyer au serveur : ")
 if type(anwser) is not str:
     raise TypeError("Le message doit etre une string")
 if not re.match(pattern,anwser):
-    raise TypeError("Le message doit contenir un de ces 2 mots (meo|waf)")
+    raise ValueError("Le message doit contenir un de ces 2 mots (meo|waf)")
 
 # On définit la destination de la connexion
 host = '10.1.4.2'  # IP du serveur
