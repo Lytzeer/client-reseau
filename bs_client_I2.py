@@ -18,7 +18,7 @@ print(f"Connecté avec succès au serveur {host} sur le port {port}")
 # Envoi de data bidon
 print("Que veux-tu envoyer au serveur :")
 anwser=input()
-s.sendall(bytes(f'{anwser}'))
+s.sendall(bytes(anwser))
 
 # On reçoit 1024 bytes qui contiennent peut-être une réponse du serveur
 data = s.recv(1024)
