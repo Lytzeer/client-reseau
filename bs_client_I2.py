@@ -1,6 +1,7 @@
 import socket
 from sys import exit
 
+anwser=input("Que veux-tu envoyer au serveur : ")
 # On définit la destination de la connexion
 host = '10.1.4.2'  # IP du serveur
 port = 13337       # Port choisir par le serveur
@@ -11,13 +12,11 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # Connexion au serveur
 try:
     s.connect((host, port))
+    print(f"Connecté avec succès au serveur {host} sur le port {port}")
 except:
     print("Erreurs lors de la connexion au serveur")
     exit(1)
-print(f"Connecté avec succès au serveur {host} sur le port {port}")
-# Envoi de data bidon
-print("Que veux-tu envoyer au serveur :")
-anwser=input()
+
 s.sendall(anwser.encode())
 
 # On reçoit 1024 bytes qui contiennent peut-être une réponse du serveur
